@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+     >
+    <ImageView
+        android:layout_marginTop="5dp" 
+        android:id="@+id/good_itemIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/zhiliaobaozhu"/>
+    <TextView 
+        android:id="@+id/good_itemTv"
+        android:layout_below="@id/good_itemIv"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试文字"
+        android:maxLines="1"
+        android:textColor="#000000"
+        android:textSize="15sp"
+       	/>
+
+</RelativeLayout>
+<!-- From: file:/Users/dllo/AndroidStudioProjects/HeroProject/app/src/main/res/layout/good_all_item.xml -->

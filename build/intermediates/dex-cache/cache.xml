@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/dllo/AndroidStudioProjects/HeroProject/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/dllo/AndroidStudioProjects/HeroProject/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-27044c9a511184fd484c542c5dafeda322c01e43.jar" />
+    </item>
+    <item
+        jar="/Users/dllo/Desktop/Mac_kaifa/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/dllo/AndroidStudioProjects/HeroProject/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-9b1ff7d3e44bcf4e5532a0305ae4872deb18a40d.jar" />
+    </item>
+    <item
+        jar="/Users/dllo/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a60a5e993c98c864010053cb901b7eab25306568/gson-2.2.4.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="/Users/dllo/AndroidStudioProjects/HeroProject/app/build/intermediates/pre-dexed/debug/gson-2.2.4-ae9e5bb36ec2420e0df81c4f43f59c12c82bd0db.jar" />
+    </item>
+    <item
+        jar="/Users/dllo/AndroidStudioProjects/HeroProject/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="/Users/dllo/AndroidStudioProjects/HeroProject/app/build/intermediates/pre-dexed/debug/classes-8677dedd38e7b8bc024ecee957cca2f415e541c4.jar" />
+    </item>
+    <item
+        jar="/Users/dllo/.gradle/caches/modules-2/files-2.1/eu.the4thfloor.volley/com.android.volley/2015.05.28/b0b08cc0ac897e596abe6b263a9507cba875b705/com.android.volley-2015.05.28.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b0b08cc0ac897e596abe6b263a9507cba875b705">
+        <dex dex="/Users/dllo/AndroidStudioProjects/HeroProject/app/build/intermediates/pre-dexed/debug/com.android.volley-2015.05.28-4e77161c1a9fadcc7f763d5581c103bb66afac85.jar" />
+    </item>
+    <item
+        jar="/Users/dllo/AndroidStudioProjects/HeroProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/dllo/AndroidStudioProjects/HeroProject/app/build/intermediates/pre-dexed/debug/classes-82c0c91ed06b2e2e72525fcfd0ef8bc334d00bb6.jar" />
+    </item>
+    <item
+        jar="/Users/dllo/AndroidStudioProjects/HeroProject/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4356e230a981d1bbf047d848b91bc0d9b7c5bacc">
+        <dex dex="/Users/dllo/AndroidStudioProjects/HeroProject/app/build/intermediates/pre-dexed/debug/classes-244cb692b2285867ce0a2ae430a2ff6fa68fc010.jar" />
+    </item>
+    <item
+        jar="/Users/dllo/AndroidStudioProjects/HeroProject/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/dllo/AndroidStudioProjects/HeroProject/app/build/intermediates/pre-dexed/debug/classes-6dc00d3026f22d033b7a4dffa9d8fce525efac73.jar" />
+    </item>
+
+</items>

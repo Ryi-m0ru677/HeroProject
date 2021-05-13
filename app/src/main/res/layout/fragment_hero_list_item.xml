@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+         >
+
+        <ImageView
+            android:id="@+id/heroListImg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ceshitouxiang" />
+
+        <TextView
+            android:id="@+id/heroListTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/heroListNameTv"
+            android:layout_toRightOf="@+id/heroListNameTv"
+            android:layout_marginLeft="5dp"
+            android:text="吃饭狂魔"
+            android:textColor="#999999"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/heroListTagTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/heroListImg"
+            android:layout_alignLeft="@+id/heroListNameTv"
+            android:text="坦克.法师.远程"
+            android:textColor="#999999"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/heroListNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/heroListImg"
+            android:layout_marginLeft="10dp"
+            android:text="测试-"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+        <!-- <TextView
+            android:id="@+id/midTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/heroListImg"
+            android:text="-"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" /> --> 
+
+    </RelativeLayout>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#dfdfdf"></LinearLayout>
+
+</LinearLayout>

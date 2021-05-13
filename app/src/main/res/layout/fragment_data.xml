@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c8c5d3"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#242735"
+        android:gravity="center"
+        android:text="资料"
+        android:textColor="#d5d6db"
+        android:textSize="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+         >
+        <RelativeLayout 
+        android:id="@+id/goodLinearIV"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#d5d7db">
+            <ImageView 
+                android:id="@+id/goodImg"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/good_index"
+                android:layout_centerInParent="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/goodImg"
+                android:layout_centerHorizontal="true"
+                android:text="物品"
+                android:textColor="#393f52"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+        <RelativeLayout 
+            android:id="@+id/skillLinearIV"
+            android:background="#d5d7db"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dp">
+            <ImageView 
+                android:id="@+id/skillImg"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/skill_index"
+                android:layout_centerInParent="true"
+                />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/skillImg"
+                 android:layout_centerHorizontal="true"
+                 android:text="召唤师技能"
+                 android:textColor="#393f52"
+                 android:textSize="15sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:background="#d5d7db"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" 
+            android:layout_marginLeft="2dp">
+
+            <ImageView
+                android:id="@+id/videoImg"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/live_index" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/videoImg"
+                android:layout_centerHorizontal="true"
+                android:text="直播"
+                android:textColor="#393f52"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+      <!--   <Button
+            android:id="@+id/goodBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#d5d6db"
+            android:drawableTop="@drawable/good_index"
+            android:text="物品"
+            android:textColor="#374051" />
+
+    <Button 
+        android:layout_marginLeft="1dp"
+        android:text="召唤师技能"
+        android:textColor="#374051"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/skill_index"
+        android:background="#d5d6db"
+        />
+    <Button 
+        android:layout_marginLeft="2dp"
+        android:text="直播"
+        android:textColor="#374051"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/live_index"
+        android:background="#d5d6db"
+        /> -->
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+         >
+        <RelativeLayout 
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#d5d7db">
+            <ImageView 
+                android:id="@+id/fuwenImg"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/fuwen_index"
+                android:layout_centerInParent="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fuwenImg"
+                android:layout_centerHorizontal="true"
+                android:text="符文"
+                android:textColor="#393f52"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:background="#d5d7db" >
+
+            <ImageView
+                android:id="@+id/tianfuImg"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/tianfu_index" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tianfuImg"
+                android:layout_centerHorizontal="true"
+                android:text="天赋模拟器"
+                android:textColor="#393f52"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:background="#d5d7db"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" 
+            android:layout_marginLeft="2dp">
+
+            <ImageView
+                android:id="@+id/gongluoImg"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/gongluo_index" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gongluoImg"
+                android:layout_centerHorizontal="true"
+                android:text="攻略"
+                android:textColor="#393f52"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+   <!--  <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#d5d6db"
+            android:drawableTop="@drawable/fuwen_index"
+            android:text="符文"
+            android:textColor="#374051" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:background="#d5d6db"
+            android:drawableTop="@drawable/tianfu_index"
+            android:text="天赋模拟器"
+            android:textColor="#374051" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:background="#d5d6db"
+            android:drawableTop="@drawable/gongluo_index"
+            android:text="攻略心得"
+            android:textColor="#374051" />
+    </LinearLayout> -->
+
+</LinearLayout>
