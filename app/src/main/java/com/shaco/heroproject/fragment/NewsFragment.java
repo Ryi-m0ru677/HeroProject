@@ -1,6 +1,5 @@
 package com.shaco.heroproject.fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -17,26 +16,12 @@ public class NewsFragment extends Fragment {
 	private ViewPager newsViewPager;
 
 	@Override
-	public void onAttach(Context context) {
-		super.onAttach(context);
-	}
-
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-	}
-
-	@Override
 	public View onCreateView(LayoutInflater inflater,
 			 ViewGroup container,  Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 
-		return inflater.inflate(R.layout.fragment_news, null);
+		return inflater.inflate(R.layout.fragment_news, container,false);
 	}
-
-
-
-
 
 	@Override
 	public void onViewCreated(View view,  Bundle savedInstanceState) {

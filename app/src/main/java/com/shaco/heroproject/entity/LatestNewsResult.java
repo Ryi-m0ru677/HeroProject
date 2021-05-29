@@ -10,7 +10,7 @@ public class LatestNewsResult {
     private int cid_rel;
     private String error_code;
     private List<Result_LatestNews> result;
-    private List<Result_LatestRecomm> recomms;
+    private List<Result_LatestRecomm> recomm;
 
     public int getCid_rel() {
         return cid_rel;
@@ -37,11 +37,11 @@ public class LatestNewsResult {
     }
 
     public List<Result_LatestRecomm> getRecomms() {
-        return recomms;
+        return recomm;
     }
 
     public void setRecomms(List<Result_LatestRecomm> recomms) {
-        this.recomms = recomms;
+        this.recomm = recomms;
     }
 
     @Override
@@ -50,7 +50,7 @@ public class LatestNewsResult {
                 "cid_rel=" + cid_rel +
                 ", error_code='" + error_code + '\'' +
                 ", result=" + result +
-                ", recomms=" + recomms +
+                ", recomms=" + recomm +
                 '}';
     }
 }

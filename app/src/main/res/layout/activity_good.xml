@@ -10,6 +10,7 @@
          android:background="#2a2b38" >
 
          <Button
+             android:id="@+id/activity_good_backBtn"
              android:layout_width="60dp"
              android:layout_height="40dp"
              android:layout_alignParentLeft="true"

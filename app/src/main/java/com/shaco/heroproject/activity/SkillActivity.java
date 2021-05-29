@@ -21,13 +21,16 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
 
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SkillActivity extends Activity{
+public class SkillActivity extends Activity implements View.OnClickListener {
+	private Button activity_skill_backBtn;
 	private RecyclerView recyclerView;
 	private SkillAdapter skillAdapter;
 	private RequestQueue queue;
@@ -36,6 +39,8 @@ public class SkillActivity extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_skill);
+		activity_skill_backBtn= (Button) findViewById(R.id.activity_skill_backBtn);
+		activity_skill_backBtn.setOnClickListener(this);
 		initView();
 		initData();
 	}
@@ -107,4 +112,12 @@ public class SkillActivity extends Activity{
 
 	}
 
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()){
+			case R.id.activity_skill_backBtn:
+				finish();
+				break;
+		}
+	}
 }

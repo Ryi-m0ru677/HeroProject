@@ -91,6 +91,8 @@ public class LatestNewsRecyclerAdapter extends RecyclerView.Adapter<LatestNewsRe
             holder.least_recyclerView_titleTv.setText(news.getTitle());
             String imgUrl=news.getIcon();
             //拉取网络图片
+//            ImageLoader.ImageListener listener = ImageLoader.getImageListener(holder.least_recyclerView_imgIv,R.drawable.ic_launcher,R.drawable.ic_launcher);
+//            imageLoader.get(imgUrl,listener);
             getBitmapCache(imgUrl,holder.least_recyclerView_imgIv);
 
         }

@@ -25,16 +25,21 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
 
-public class GoodActivity extends Activity{
+public class GoodActivity extends Activity implements View.OnClickListener {
 	private RecyclerView recyclerView;
 	private GoodAdapter goodAdapter;
 	private RequestQueue queue;
+	private Button activity_good_backBtn;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_good);
+		activity_good_backBtn= (Button) findViewById(R.id.activity_good_backBtn);
+		activity_good_backBtn.setOnClickListener(this);
 		initView();
 		initData();
 	}
@@ -105,4 +110,12 @@ public class GoodActivity extends Activity{
 		queue.add(request);// 加入请求队列
 	}
 
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()){
+			case R.id.activity_good_backBtn:
+				finish();
+				break;
+		}
+	}
 }

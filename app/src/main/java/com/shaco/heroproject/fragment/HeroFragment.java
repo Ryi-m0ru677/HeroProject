@@ -1,6 +1,7 @@
 package com.shaco.heroproject.fragment;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,26 +24,26 @@ import com.shaco.heroproject.entity.Results;
 import com.shaco.heroproject.entity.VideoResult;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class HeroFragment extends Fragment{
-	private RecyclerView recyclerView;
+public class HeroFragment extends Fragment implements View.OnClickListener{
 	private HeroAdapter adapter;
-	
-	
-	private ImageView heroListImg;
-	private TextView heroListTitleTv,heroListTagTv,heroListNameTv;
-	private RequestQueue queue;
-	
+	private Button hero_left_freeBtn,hero_right_allBtn,hero_freshBtn;
+//	String url = "http://lol.data.shiwan.com/lolHeros/?filter=all&type=all";
+
+
 	@Override
 	@Nullable
 	public View onCreateView(LayoutInflater inflater,
@@ -60,18 +61,30 @@ public class HeroFragment extends Fragment{
 	}
 	@Override
 	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+
 		// TODO Auto-generated method stub
 		super.onActivityCreated(savedInstanceState);
 		initView();
 		initData();
+
+		hero_freshBtn=(Button)getActivity().findViewById(R.id.hero_freshBtn);
+		hero_left_freeBtn=(Button)getActivity().findViewById(R.id.hero_left_freeBtn);
+		hero_right_allBtn=(Button)getActivity().findViewById(R.id.hero_right_allBtn);
+		hero_left_freeBtn.setOnClickListener(this);
+		hero_right_allBtn.setOnClickListener(this);
+		hero_freshBtn.setOnClickListener(this);
+
+
+
+
 	}
 	private void initView() {
-		// TODO Auto-generated method stub
-		heroListImg=(ImageView)getActivity().findViewById(R.id.heroListImg);
-		heroListTitleTv = (TextView) getActivity().findViewById(R.id.heroListTitleTv);
-		heroListTagTv=(TextView) getActivity().findViewById(R.id.heroListTagTv);
-		heroListNameTv=(TextView) getActivity().findViewById(R.id.heroListNameTv);
-		recyclerView = (RecyclerView) getActivity().findViewById(
+//		// TODO Auto-generated method stub
+//		ImageView heroListImg = (ImageView) getActivity().findViewById(R.id.heroListImg);
+//		TextView heroListTitleTv = (TextView) getActivity().findViewById(R.id.heroListTitleTv);
+//		TextView heroListTagTv = (TextView) getActivity().findViewById(R.id.heroListTagTv);
+//		TextView heroListNameTv = (TextView) getActivity().findViewById(R.id.heroListNameTv);
+		RecyclerView recyclerView = (RecyclerView) getActivity().findViewById(
 				R.id.heroRecycleView);
 		GridLayoutManager gridLayoutManager = new GridLayoutManager(
 				getActivity(), 1);
@@ -82,7 +95,7 @@ public class HeroFragment extends Fragment{
 	}
 	private void initData() {
 		// TODO Auto-generated method stub
-		queue = Volley.newRequestQueue(getActivity());
+		RequestQueue queue = Volley.newRequestQueue(getActivity());
 		String url = "http://lol.data.shiwan.com/lolHeros/?filter=all&type=all";
 		StringRequest request = new StringRequest(url,
 				new Response.Listener<String>() {
@@ -135,4 +148,24 @@ public class HeroFragment extends Fragment{
 
 	}
 
+	@Override
+	public void onClick(View v) {
+
+		switch (v.getId()){
+			case R.id.hero_freshBtn:
+				break;
+			case R.id.hero_left_freeBtn:
+				Log.i("shaco","---------->点击了left");
+//				 url = "http://lol.data.shiwan.com/lolHeros/?filter=&type=free";
+//				Intent intent=new Intent(getActivity(), HeroFragment.class);
+//				startActivity(intent);
+				break;
+			case R.id.hero_right_allBtn:
+				Log.i("shaco","---------->点击了right");
+//				url = "http://lol.data.shiwan.com/lolHeros/?filter=all&type=all";
+//				Intent intent2=new Intent(getActivity(), HeroFragment.class);
+//				startActivity(intent2);
+				break;
+		}
+	}
 }

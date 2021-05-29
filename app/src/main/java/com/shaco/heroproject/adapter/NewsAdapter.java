@@ -18,6 +18,7 @@ private String[] news_titles={"最新","赛事","NEST","神贴","囧图","美女
 	@Override
 	public Fragment getItem(int position) {
 		// TODO Auto-generated method stub
+//		return NewsLatestFragment.getInstance(position);
 		return FragmentFactory.creatFragment(position);
 	}
 
