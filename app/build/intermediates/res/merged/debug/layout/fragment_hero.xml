@@ -19,6 +19,16 @@
              android:layout_marginLeft="10dp"
              android:background="@drawable/data_fresh_selector" />
 
+
+         <!--<Switch-->
+             <!--android:layout_width="wrap_content"-->
+             <!--android:layout_height="wrap_content"-->
+             <!--android:layout_alignTop="@+id/hero_freshBtn"-->
+             <!--android:layout_centerHorizontal="true"-->
+             <!--android:textOn="开灯"-->
+             <!--android:textOff="关灯"-->
+             <!--android:checked="false" />-->
+
          <LinearLayout
              android:layout_width="120dp"
              android:layout_height="40dp"

@@ -24,6 +24,8 @@
         <activity android:name="com.shaco.heroproject.activity.MainActivity"></activity>
         <activity android:name="com.shaco.heroproject.activity.GoodActivity"></activity>
         <activity android:name="com.shaco.heroproject.activity.SkillActivity"></activity>
+        <activity android:name="com.shaco.heroproject.activity.Ceshi"></activity>
+        <activity android:name=".activity.HeroInforActivity"></activity>
     </application>
 
 </manifest>

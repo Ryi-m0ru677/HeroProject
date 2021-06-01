@@ -11,7 +11,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.Volley;
 import com.shaco.heroproject.R;
+import com.shaco.heroproject.demo.MyItemOnClickListener;
 import com.shaco.heroproject.entity.Result_AllHero;
+import com.shaco.heroproject.fragment.HeroFragment;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -27,24 +29,44 @@ import android.widget.TextView;
 public class HeroAdapter extends Adapter<HeroAdapter.HeroHolder>{
 	private List<Result_AllHero> result;
 	private RequestQueue queue;
-	
+
+	private MyItemOnClickListener myItemOnClickListener;
+
 	public HeroAdapter(Context c) {
 		queue = Volley.newRequestQueue(c);
 	}
-	
-	class HeroHolder extends RecyclerView.ViewHolder {
+
+	//item的点击事件
+
+
+	public void setOnItemClickListener(MyItemOnClickListener listener) {
+		this.myItemOnClickListener=listener;
+	}
+
+
+	class HeroHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 		private ImageView heroListImg;
 		private TextView heroListTitleTv,heroListTagTv,heroListNameTv;
-//昵称.定位.名字
-		public HeroHolder(View v) {
+		private MyItemOnClickListener mListener;
+		//昵称.定位.名字
+		public HeroHolder(View v,MyItemOnClickListener listener) {
 			super(v);
 			heroListImg = (ImageView) v.findViewById(R.id.heroListImg);
 			heroListTitleTv = (TextView) v.findViewById(R.id.heroListTitleTv);
 			heroListTagTv=(TextView) v.findViewById(R.id.heroListTagTv);
 			heroListNameTv=(TextView) v.findViewById(R.id.heroListNameTv);
+			//--------------------//
+			this.mListener=listener;
+			v.setOnClickListener(this);
 			// TODO Auto-generated constructor stub
 		}
 
+		@Override
+		public void onClick(View v) {
+			if (mListener!=null){
+				mListener.onItemClick(v,getPosition());
+			}
+		}
 	}
 
 	@Override
@@ -116,7 +138,10 @@ public class HeroAdapter extends Adapter<HeroAdapter.HeroHolder>{
 	public HeroHolder onCreateViewHolder(ViewGroup viewGroup, int position) {
 		LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
 		View v = inflater.inflate(R.layout.fragment_hero_list_item, null);
-		return new HeroHolder(v);
+		return new HeroHolder(v,myItemOnClickListener);
 	}
+
+
+
 
 }

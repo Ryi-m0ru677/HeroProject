@@ -1,7 +1,6 @@
 package com.shaco.heroproject.fragment;
 
 import java.io.UnsupportedEncodingException;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,11 +16,12 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.shaco.heroproject.R;
+import com.shaco.heroproject.activity.Ceshi;
+import com.shaco.heroproject.activity.HeroInforActivity;
 import com.shaco.heroproject.adapter.HeroAdapter;
+import com.shaco.heroproject.demo.MyItemOnClickListener;
 import com.shaco.heroproject.entity.AllHeroResult;
 import com.shaco.heroproject.entity.Result_AllHero;
-import com.shaco.heroproject.entity.Results;
-import com.shaco.heroproject.entity.VideoResult;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -35,137 +35,155 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-public class HeroFragment extends Fragment implements View.OnClickListener{
-	private HeroAdapter adapter;
-	private Button hero_left_freeBtn,hero_right_allBtn,hero_freshBtn;
+public class HeroFragment extends Fragment implements View.OnClickListener, MyItemOnClickListener {
+    private HeroAdapter adapter;
+    private Button hero_left_freeBtn, hero_right_allBtn, hero_freshBtn;
+    private List<Result_AllHero> results;
 //	String url = "http://lol.data.shiwan.com/lolHeros/?filter=all&type=all";
 
 
-	@Override
-	@Nullable
-	public View onCreateView(LayoutInflater inflater,
-			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-		return inflater.inflate(R.layout.fragment_hero, null);
-	}
-	
-	
-	
-	@Override
-	public void onAttach(Activity activity) {
-		// TODO Auto-generated method stub
-		super.onAttach(activity);
-	}
-	@Override
-	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+    @Override
+    @Nullable
+    public View onCreateView(LayoutInflater inflater,
+                             @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        // TODO Auto-generated method stub
+        return inflater.inflate(R.layout.fragment_hero, null);
+    }
 
-		// TODO Auto-generated method stub
-		super.onActivityCreated(savedInstanceState);
-		initView();
-		initData();
 
-		hero_freshBtn=(Button)getActivity().findViewById(R.id.hero_freshBtn);
-		hero_left_freeBtn=(Button)getActivity().findViewById(R.id.hero_left_freeBtn);
-		hero_right_allBtn=(Button)getActivity().findViewById(R.id.hero_right_allBtn);
-		hero_left_freeBtn.setOnClickListener(this);
-		hero_right_allBtn.setOnClickListener(this);
-		hero_freshBtn.setOnClickListener(this);
+    @Override
+    public void onAttach(Activity activity) {
+        // TODO Auto-generated method stub
+        super.onAttach(activity);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+
+        // TODO Auto-generated method stub
+        super.onActivityCreated(savedInstanceState);
+        initView();
+        initData();
 
 
 
+        hero_freshBtn = (Button) getActivity().findViewById(R.id.hero_freshBtn);
+        hero_left_freeBtn = (Button) getActivity().findViewById(R.id.hero_left_freeBtn);
+        hero_right_allBtn = (Button) getActivity().findViewById(R.id.hero_right_allBtn);
+        hero_left_freeBtn.setOnClickListener(this);
+        hero_right_allBtn.setOnClickListener(this);
+        hero_freshBtn.setOnClickListener(this);
 
-	}
-	private void initView() {
+
+    }
+
+    private void initView() {
 //		// TODO Auto-generated method stub
 //		ImageView heroListImg = (ImageView) getActivity().findViewById(R.id.heroListImg);
 //		TextView heroListTitleTv = (TextView) getActivity().findViewById(R.id.heroListTitleTv);
 //		TextView heroListTagTv = (TextView) getActivity().findViewById(R.id.heroListTagTv);
 //		TextView heroListNameTv = (TextView) getActivity().findViewById(R.id.heroListNameTv);
-		RecyclerView recyclerView = (RecyclerView) getActivity().findViewById(
-				R.id.heroRecycleView);
-		GridLayoutManager gridLayoutManager = new GridLayoutManager(
-				getActivity(), 1);
-		recyclerView.setLayoutManager(gridLayoutManager);
-		adapter = new HeroAdapter(getActivity());
-		recyclerView.setAdapter(adapter);
+        RecyclerView recyclerView = (RecyclerView) getActivity().findViewById(
+                R.id.heroRecycleView);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(
+                getActivity(), 1);
+        recyclerView.setLayoutManager(gridLayoutManager);
+        adapter = new HeroAdapter(getActivity());
+        recyclerView.setAdapter(adapter);
 
-	}
-	private void initData() {
-		// TODO Auto-generated method stub
-		RequestQueue queue = Volley.newRequestQueue(getActivity());
-		String url = "http://lol.data.shiwan.com/lolHeros/?filter=all&type=all";
-		StringRequest request = new StringRequest(url,
-				new Response.Listener<String>() {
-					@Override
-					public void onResponse(String response) {
-						// TODO Auto-generated method stub
-						Gson gson = new Gson();
-						AllHeroResult vr = gson.fromJson(response,
-								AllHeroResult.class);
-						if (vr != null) {
-							List<Result_AllHero> results = vr.getResult();
-							adapter.addData(results);
-						}
-					}
-				}, new Response.ErrorListener() {
+        adapter.setOnItemClickListener(this);
 
-					@Override
-					public void onErrorResponse(VolleyError error) {
-						// TODO Auto-generated method stub
-						error.printStackTrace();
 
-					}
-				}) {
+    }
 
-			@Override
-			public Map<String, String> getHeaders() throws AuthFailureError {
-				// 添加请求头 在请求头中增加属性
-				Map<String, String> map = new HashMap<String, String>();
-				// 在请求头中添加apikey
-				map.put("Accept-Encoding", "");
-				return map;
-			}
+    private void initData() {
+        // TODO Auto-generated method stub
+        RequestQueue queue = Volley.newRequestQueue(getActivity());
+        String url = "http://lol.data.shiwan.com/lolHeros/?filter=all&type=all";
+        StringRequest request = new StringRequest(url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        // TODO Auto-generated method stub
+                        Gson gson = new Gson();
+                        AllHeroResult vr = gson.fromJson(response,
+                                AllHeroResult.class);
+                        if (vr != null) {
+                            results = vr.getResult();
+                            adapter.addData(results);
+                        }
+                    }
+                }, new Response.ErrorListener() {
 
-			@Override
-			protected Response<String> parseNetworkResponse(
-					NetworkResponse response) {
-				try {
-					String jsonString = new String(response.data, "UTF-8");
-					return Response.success(jsonString,
-							HttpHeaderParser.parseCacheHeaders(response));
-				} catch (UnsupportedEncodingException e) {
-					return Response.error(new ParseError(e));
-				} catch (Exception je) {
-					return Response.error(new ParseError(je));
-				}
-			}
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // TODO Auto-generated method stub
+                error.printStackTrace();
 
-		};
-		queue.add(request);
+            }
+        }) {
 
-	}
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                // 添加请求头 在请求头中增加属性
+                Map<String, String> map = new HashMap<String, String>();
+                // 在请求头中添加apikey
+                map.put("Accept-Encoding", "");
+                return map;
+            }
 
-	@Override
-	public void onClick(View v) {
+            @Override
+            protected Response<String> parseNetworkResponse(
+                    NetworkResponse response) {
+                try {
+                    String jsonString = new String(response.data, "UTF-8");
+                    return Response.success(jsonString,
+                            HttpHeaderParser.parseCacheHeaders(response));
+                } catch (UnsupportedEncodingException e) {
+                    return Response.error(new ParseError(e));
+                } catch (Exception je) {
+                    return Response.error(new ParseError(je));
+                }
+            }
 
-		switch (v.getId()){
-			case R.id.hero_freshBtn:
-				break;
-			case R.id.hero_left_freeBtn:
-				Log.i("shaco","---------->点击了left");
-//				 url = "http://lol.data.shiwan.com/lolHeros/?filter=&type=free";
-//				Intent intent=new Intent(getActivity(), HeroFragment.class);
-//				startActivity(intent);
-				break;
-			case R.id.hero_right_allBtn:
-				Log.i("shaco","---------->点击了right");
-//				url = "http://lol.data.shiwan.com/lolHeros/?filter=all&type=all";
-//				Intent intent2=new Intent(getActivity(), HeroFragment.class);
-//				startActivity(intent2);
-				break;
-		}
-	}
+        };
+        queue.add(request);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+            case R.id.hero_freshBtn:
+                break;
+            case R.id.hero_left_freeBtn:
+                Log.i("shaco", "---------->点击了left");
+                break;
+            case R.id.hero_right_allBtn:
+                Log.i("shaco", "---------->点击了right");
+                break;
+        }
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+
+        Result_AllHero result_allHero = results.get(position);
+        String id = result_allHero.getId();
+        String name =result_allHero.getName_c();
+        Log.i("shaco", "--------->" + id + "名字是" + name);
+        Intent intent=new Intent();
+        intent.setClass(getActivity(), HeroInforActivity.class);
+        intent.putExtra("id", id);
+        getActivity().startActivityForResult(intent,100);
+//        getActivity().startActivity(intent);
+    }
+//	public void onItemClick(View view,int position){
+//		Result_AllHero result_allHero=result.get(position);
+//		String id=result_allHero.getId();
+//		Log.i("shaco","--------->"+id);
+//
+//	}
 }

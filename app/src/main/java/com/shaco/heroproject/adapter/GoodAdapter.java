@@ -11,8 +11,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.Volley;
 import com.shaco.heroproject.R;
-import com.shaco.heroproject.adapter.HeroAdapter.HeroHolder;
-import com.shaco.heroproject.entity.Result_AllHero;
 import com.shaco.heroproject.entity.Result_Good;
 
 import android.content.Context;
@@ -20,7 +18,6 @@ import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.Adapter;
-import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
