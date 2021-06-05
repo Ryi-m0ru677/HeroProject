@@ -172,8 +172,6 @@ public class HeroFragment extends Fragment implements View.OnClickListener, MyIt
 
         Result_AllHero result_allHero = results.get(position);
         String id = result_allHero.getId();
-        String name =result_allHero.getName_c();
-        Log.i("shaco", "--------->" + id + "名字是" + name);
         Intent intent=new Intent();
         intent.setClass(getActivity(), HeroInforActivity.class);
         intent.putExtra("id", id);

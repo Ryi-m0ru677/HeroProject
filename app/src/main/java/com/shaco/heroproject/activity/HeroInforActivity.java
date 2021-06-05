@@ -1,6 +1,7 @@
 package com.shaco.heroproject.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +20,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.shaco.heroproject.R;
+import com.shaco.heroproject.entity.HeroInforResult;
 import com.shaco.heroproject.entity.HeroResult;
 
 import java.util.HashMap;
@@ -28,7 +30,8 @@ import java.util.Map;
  * Created by dllo on 15/10/28.
  */
 public class HeroInforActivity extends Activity implements View.OnClickListener {
-    //    private HeroInforResult result;
+        private HeroInforResult result;
+//    private HeroResult results;
     private ImageLoader imageLoader;
     private Button activity_heroInfor_backBtn;
     private RequestQueue queue;
@@ -36,7 +39,9 @@ public class HeroInforActivity extends Activity implements View.OnClickListener 
             name_cTv,heroInfor_titleTv,heroInforTagsTv,
             heroInfor_physical_Tv,heroInfor_skill_attackTv,
             heroInfor_life_pTv,heroInfor_operate_pTv;
-    private ImageView heroInfor_img_topTv,heroInforImgTv;
+    private ImageView heroInfor_img_topTv,heroInforImgTv,heroInfor_jinengIv,heroInfor_jieshao;
+
+    private String heroUrl;
 
 
     @Override
@@ -64,6 +69,12 @@ public class HeroInforActivity extends Activity implements View.OnClickListener 
         heroInfor_img_topTv=(ImageView)findViewById(R.id.heroInfor_img_topTv);
         heroInforImgTv=(ImageView)findViewById(R.id.heroInforImgTv);
 
+        heroInfor_jinengIv= (ImageView) findViewById(R.id.heroInfor_jinengIv);//技能图标按钮
+        heroInfor_jinengIv.setOnClickListener(this);
+        heroInfor_jieshao=(ImageView) findViewById(R.id.heroInfor_jieshao);//介绍图标按钮
+        heroInfor_jieshao.setOnClickListener(this);
+
+
     }
 
 
@@ -73,6 +84,7 @@ public class HeroInforActivity extends Activity implements View.OnClickListener 
         Log.i("shaco", "得到的id是 :" + id);
         queue = Volley.newRequestQueue(this);
         String url = "http://lol.data.shiwan.com/lolHeroInfo/?id=" + id;
+        heroUrl=url;
         Log.i("shaco", "得到的地址是" + url);
         StringRequest request = new StringRequest(url, new Response.Listener<String>() {
             @Override
@@ -155,10 +167,19 @@ public class HeroInforActivity extends Activity implements View.OnClickListener 
             case R.id.activity_heroInfor_backBtn:
                 finish();
                 break;
+            case R.id.heroInfor_jinengIv:
+                Intent intent=new Intent();
+                intent.setClass(this,HeroInforSkillActivity.class);
+                intent.putExtra("heroUrl",heroUrl);
+                this.startActivityForResult(intent,100);
+                break;
+            case R.id.heroInfor_jieshao:
+                Intent intent1=new Intent();
+                intent1.setClass(this,HeroInforMessageActivity.class);
+                intent1.putExtra("heroUrl", heroUrl);
+                this.startActivityForResult(intent1,100);
+                break;
         }
     }
-    public void getBitmapCache(String url,ImageView imageView){
-        ImageLoader.ImageListener listener=ImageLoader.getImageListener(imageView,R.drawable.ic_launcher,R.drawable.ic_launcher);
-        imageLoader.get(url,listener);
-    }
+
 }

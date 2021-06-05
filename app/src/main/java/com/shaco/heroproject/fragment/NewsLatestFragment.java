@@ -100,8 +100,8 @@ public class NewsLatestFragment extends Fragment {
                 LatestNewsResult result = gson.fromJson(response, LatestNewsResult.class);
                 List<Result_LatestNews> newsList = result.getResult();
                 List<Result_LatestRecomm> recommList = result.getRecomms();
-                Log.d(TAG, newsList.toString());
-                Log.d(TAG, recommList.toString());
+//                Log.d(TAG, newsList.toString());
+//                Log.d(TAG, recommList.toString());
                 recyclerAdapter.addData(newsList);
                 viewPageadapter.addData(recommList);
 

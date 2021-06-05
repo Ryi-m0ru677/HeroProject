@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#cdc3d2"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/hero_skillImgIv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/jinengdemorentubiao" />
+
+        <TextView
+            android:id="@+id/heroSkillNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="技能"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/heroSkillKeyTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="(被动)"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="技能说明"
+            android:textColor="#997246"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/heroSkillInforTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="阿克苏李金发科技拉上飞机啊死定了空间 阿斯顿接口连接了空间阿斯科利金坷垃收到讲课老师的加拉垃圾啊手机卡 "
+            android:textColor="#999999" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="使用心得技巧"
+            android:textColor="#997246"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/heroSkillJiqiaoTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="阿克苏李金发科技拉上飞机啊死定了空间 阿斯顿接口连接了空间阿斯科利金坷垃收到讲课老师的加拉垃圾啊手机卡 "
+            android:textColor="#999999" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

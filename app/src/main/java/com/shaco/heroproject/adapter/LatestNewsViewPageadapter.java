@@ -58,14 +58,6 @@ public class LatestNewsViewPageadapter extends PagerAdapter {
         result_latestRecomms=datas;
         notifyDataSetChanged();
     }
-//
-//    @Override
-//    public Fragment getItem(int position) {
-//        Result_LatestRecomm r=result_latestRecomms.get(position);
-//        String title=r.getName();
-//        String imgUrl=r.getBan_img();
-//        return null;
-//    }
 
     @Override
     public int getCount() {
@@ -86,7 +78,6 @@ public class LatestNewsViewPageadapter extends PagerAdapter {
 //        String title =result_latestRecomms.get(position).getName();
         imgUrl = imgUrl.replace("%3A",":");
         imgUrl = imgUrl.replace("%2F","/");
-        Log.d("TAGGG", imgUrl);
         imageView.setImageUrl(imgUrl, imageLoader);
         container.addView(imageView);
         return imageView;
