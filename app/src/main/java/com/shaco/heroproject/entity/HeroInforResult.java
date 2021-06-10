@@ -20,6 +20,34 @@ public class HeroInforResult {
     private String life_p;   //防御系数
     private String operate_p;//难度系数
 
+    private String talent_attack_num;//攻击
+    private String talent_common_num;//通用
+    private String talent_defense_num;//防御
+
+    public String getTalent_attack_num() {
+        return talent_attack_num;
+    }
+
+    public void setTalent_attack_num(String talent_attack_num) {
+        this.talent_attack_num = talent_attack_num;
+    }
+
+    public String getTalent_common_num() {
+        return talent_common_num;
+    }
+
+    public void setTalent_common_num(String talent_common_num) {
+        this.talent_common_num = talent_common_num;
+    }
+
+    public String getTalent_defense_num() {
+        return talent_defense_num;
+    }
+
+    public void setTalent_defense_num(String talent_defense_num) {
+        this.talent_defense_num = talent_defense_num;
+    }
+
     private List<HeroSkill> skill;
 
     private HeroInforGrow v1;//血量与成长
@@ -42,6 +70,43 @@ public class HeroInforResult {
     private String v18;//法术减免
 
     private String analyse;//英雄定位
+
+    private List<String> use_gist;//使用要点
+    private String talent_desc;//天赋
+    private String rune_desc;//符文
+    private HeroTeam hero_team;
+
+    public HeroTeam getHero_team() {
+        return hero_team;
+    }
+
+    public void setHero_team(HeroTeam hero_team) {
+        this.hero_team = hero_team;
+    }
+
+    public String getRune_desc() {
+        return rune_desc;
+    }
+
+    public void setRune_desc(String rune_desc) {
+        this.rune_desc = rune_desc;
+    }
+
+    public String getTalent_desc() {
+        return talent_desc;
+    }
+
+    public void setTalent_desc(String talent_desc) {
+        this.talent_desc = talent_desc;
+    }
+
+    public List<String> getUse_gist() {
+        return use_gist;
+    }
+
+    public void setUse_gist(List<String> use_gist) {
+        this.use_gist = use_gist;
+    }
 
     public HeroInforGrow getV1() {
         return v1;
@@ -290,7 +355,6 @@ public class HeroInforResult {
     public void setOperate_p(String operate_p) {
         this.operate_p = operate_p;
     }
-
 
 
 }
