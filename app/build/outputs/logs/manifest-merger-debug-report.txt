@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/dllo/AndroidStudioProjects/HeroProject/app/src/main/AndroidManifest.xml:1:1-33:12
+ADDED from /Users/dllo/AndroidStudioProjects/HeroProject/app/src/main/AndroidManifest.xml:1:1-35:12
 	package
 		ADDED from /Users/dllo/AndroidStudioProjects/HeroProject/app/src/main/AndroidManifest.xml:2:5-36
 		INJECTED from /Users/dllo/AndroidStudioProjects/HeroProject/app/src/main/AndroidManifest.xml
@@ -37,7 +37,7 @@ ADDED from /Users/dllo/AndroidStudioProjects/HeroProject/app/src/main/AndroidMan
 	android:name
 		ADDED from /Users/dllo/AndroidStudioProjects/HeroProject/app/src/main/AndroidManifest.xml:9:22-64
 application
-ADDED from /Users/dllo/AndroidStudioProjects/HeroProject/app/src/main/AndroidManifest.xml:11:5-31:19
+ADDED from /Users/dllo/AndroidStudioProjects/HeroProject/app/src/main/AndroidManifest.xml:11:5-33:19
 MERGED from [com.android.support:design:23.0.1] /Users/dllo/AndroidStudioProjects/HeroProject/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.0.1] /Users/dllo/AndroidStudioProjects/HeroProject/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/dllo/AndroidStudioProjects/HeroProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:22:5-20
@@ -96,3 +96,11 @@ activity#com.shaco.heroproject.activity.HeroInforMessageActivity
 ADDED from /Users/dllo/AndroidStudioProjects/HeroProject/app/src/main/AndroidManifest.xml:30:9-80
 	android:name
 		ADDED from /Users/dllo/AndroidStudioProjects/HeroProject/app/src/main/AndroidManifest.xml:30:19-68
+activity#com.shaco.heroproject.activity.HeroInforEquipmentActivity
+ADDED from /Users/dllo/AndroidStudioProjects/HeroProject/app/src/main/AndroidManifest.xml:31:9-82
+	android:name
+		ADDED from /Users/dllo/AndroidStudioProjects/HeroProject/app/src/main/AndroidManifest.xml:31:19-70
+activity#com.shaco.heroproject.activity.EquipmentListActivity
+ADDED from /Users/dllo/AndroidStudioProjects/HeroProject/app/src/main/AndroidManifest.xml:32:9-77
+	android:name
+		ADDED from /Users/dllo/AndroidStudioProjects/HeroProject/app/src/main/AndroidManifest.xml:32:19-65

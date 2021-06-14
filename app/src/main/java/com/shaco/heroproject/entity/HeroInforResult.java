@@ -9,6 +9,7 @@ import java.util.List;
  */
 public class HeroInforResult {
     private String name_c;
+    private String name_e;//英文名字
     private String price_score;
     private String price_rmb;
     private String img;   //头像
@@ -23,6 +24,14 @@ public class HeroInforResult {
     private String talent_attack_num;//攻击
     private String talent_common_num;//通用
     private String talent_defense_num;//防御
+
+    public String getName_e() {
+        return name_e;
+    }
+
+    public void setName_e(String name_e) {
+        this.name_e = name_e;
+    }
 
     public String getTalent_attack_num() {
         return talent_attack_num;

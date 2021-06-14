@@ -8,14 +8,14 @@ import com.shaco.heroproject.fragment.NewsLatestFragment;
 
 public class FragmentFactory {
     private static SparseArray<Fragment> fragmentMap = new SparseArray<Fragment>();
-    private static final String[] urls = {"http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=207&page=1",
-            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=216&page=1",
-            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=261&page=1",
-            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=212&page=1",
-            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=213&page=1",
-            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=210&page=1",
-            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=214&page=1",
-            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=211&page=1"};
+    private static final String[] urls = {"http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=207",
+            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=216",
+            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=261",
+            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=212",
+            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=213",
+            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=210",
+            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=214",
+            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=211"};
 
     public static Fragment creatFragment(int position) {
         Fragment fragment = fragmentMap.get(position);

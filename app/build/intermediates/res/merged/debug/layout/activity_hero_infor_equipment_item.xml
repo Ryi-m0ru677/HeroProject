@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="#ffffff"
+    android:layout_marginTop="5dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/equipment_leixingTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="[匹配]"
+            android:textColor="#000000"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/equipment_titleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/equipment_leixingTv"
+            android:text="钻石德玛西亚之一心得"
+            android:textColor="#000000"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/equipment_timeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:text="2015-01-27"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/equipment_authorTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="作者:AD.暴徒"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/equipment_numberTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:textColor="#ff0000"
+            android:text="战斗力: 11111"
+            android:textSize="13sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_marginTop="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:padding="5dp"
+            android:id="@+id/equipment_Img1Tv"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_launcher" />
+
+        <ImageView
+            android:padding="5dp"
+            android:id="@+id/equipment_Img2Tv"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_launcher" />
+
+        <ImageView
+            android:padding="5dp"
+            android:id="@+id/equipment_Img3Tv"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_launcher" />
+
+        <ImageView
+            android:padding="5dp"
+            android:id="@+id/equipment_Img4Tv"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_launcher" />
+
+        <ImageView
+            android:padding="5dp"
+            android:id="@+id/equipment_Img5Tv"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_launcher" />
+        <ImageView
+            android:padding="5dp"
+            android:id="@+id/equipment_Img6Tv"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_launcher" />
+
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#c6c3d2"/>
+
+</LinearLayout>
+<!-- From: file:/Users/dllo/AndroidStudioProjects/HeroProject/app/src/main/res/layout/activity_hero_infor_equipment_item.xml -->

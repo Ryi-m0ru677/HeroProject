@@ -39,9 +39,11 @@ public class HeroInforActivity extends Activity implements View.OnClickListener 
             name_cTv,heroInfor_titleTv,heroInforTagsTv,
             heroInfor_physical_Tv,heroInfor_skill_attackTv,
             heroInfor_life_pTv,heroInfor_operate_pTv;
-    private ImageView heroInfor_img_topTv,heroInforImgTv,heroInfor_jinengIv,heroInfor_jieshao;
+    private ImageView heroInfor_img_topTv,heroInforImgTv,heroInfor_jinengIv,
+            heroInfor_jieshao,heroInfor_chuzhuang;
 
     private String heroUrl;
+    private String name;
 
 
     @Override
@@ -73,6 +75,8 @@ public class HeroInforActivity extends Activity implements View.OnClickListener 
         heroInfor_jinengIv.setOnClickListener(this);
         heroInfor_jieshao=(ImageView) findViewById(R.id.heroInfor_jieshao);//介绍图标按钮
         heroInfor_jieshao.setOnClickListener(this);
+        heroInfor_chuzhuang= (ImageView) findViewById(R.id.heroInfor_chuzhuang);//出装图标
+        heroInfor_chuzhuang.setOnClickListener(this);
 
 
     }
@@ -108,6 +112,9 @@ public class HeroInforActivity extends Activity implements View.OnClickListener 
                 getBitmap(imgUrl_head,heroInforImgTv);
 //                getBitmapCache(imgUrl,heroInfor_img_topTv);
                 Log.i("shaco", "tupian de url"+imgUrl);
+
+                name=hr.getResult().getName_e();
+                Log.i("lanou","+++++++++++++>"+name);
 
             }
 
@@ -178,6 +185,12 @@ public class HeroInforActivity extends Activity implements View.OnClickListener 
                 intent1.setClass(this,HeroInforMessageActivity.class);
                 intent1.putExtra("heroUrl", heroUrl);
                 this.startActivityForResult(intent1,100);
+                break;
+            case R.id.heroInfor_chuzhuang:
+                Intent intent2=new Intent();
+                intent2.setClass(this,HeroInforEquipmentActivity.class);
+                intent2.putExtra("name",name);
+                this.startActivityForResult(intent2,100);
                 break;
         }
     }

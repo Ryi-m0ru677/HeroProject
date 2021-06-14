@@ -24,32 +24,14 @@ import com.shaco.heroproject.adapter.LatestNewsViewPageadapter;
 import com.shaco.heroproject.entity.LatestNewsResult;
 import com.shaco.heroproject.entity.Result_LatestNews;
 import com.shaco.heroproject.entity.Result_LatestRecomm;
+
 import java.util.List;
 
 public class NewsLatestFragment extends Fragment {
     private static final String TAG = "NewsLatestFragment";
     private RequestQueue queue;
-//    private static final String[] urls = {"http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=207&page=1",
-//            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=216&page=1",
-//            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=261&page=1",
-//            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=212&page=1",
-//            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=213&page=1",
-//            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=210&page=1",
-//            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=214&page=1",
-//            "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=211&page=1"};
 
-//    public static NewsLatestFragment getInstance(int position) {
-//        NewsLatestFragment newsLatestFragment = new NewsLatestFragment();
-//        // 参数传递
-//        Bundle args = new Bundle();
-//        args.putString("imgUrl", urls[position]);
-//        newsLatestFragment.setArguments(args);
-//        return newsLatestFragment;
-//
-//    }
-
-        private String url = "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=207&page=1";
-//    private String url = "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=211&page=1";
+    private String url = "http://lol.data.shiwan.com/getArticleListImprove/?cid_rel=207";
     private RecyclerView recyclerView;
     private ViewPager viewPager;
 
@@ -100,8 +82,6 @@ public class NewsLatestFragment extends Fragment {
                 LatestNewsResult result = gson.fromJson(response, LatestNewsResult.class);
                 List<Result_LatestNews> newsList = result.getResult();
                 List<Result_LatestRecomm> recommList = result.getRecomms();
-//                Log.d(TAG, newsList.toString());
-//                Log.d(TAG, recommList.toString());
                 recyclerAdapter.addData(newsList);
                 viewPageadapter.addData(recommList);
 
@@ -115,35 +95,5 @@ public class NewsLatestFragment extends Fragment {
         queue.add(request);
     }
 
-//    /**
-//     * 通过volley请求图片
-//     **/
-//    public void getBitmap(String url, final ImageView imageView) {
-//
-//        ImageRequest request = new ImageRequest(url,
-//                new Response.Listener<Bitmap>() {
-//                    @Override
-//                    public void onResponse(Bitmap response) {
-//                        // 将返回的bitmap图片对象设置到图片组件中
-//                        imageView.setImageBitmap(response);
-//                    }
-//                }, 720, 200, Bitmap.Config.ARGB_8888, new Response.ErrorListener() {
-//
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                // 打印错误信息
-//                error.printStackTrace();
-//            }
-//        }) {
-//            @Override
-//            public Map<String, String> getHeaders() throws AuthFailureError {
-//                HashMap<String, String> map = new HashMap<String, String>();
-//                map.put("Accept-Encoding", "");
-//                return map;
-//            }
-//        };
-//        queue.add(request); // 将本次图片请求加入到请求列队中
-//
-//    }
 
 }

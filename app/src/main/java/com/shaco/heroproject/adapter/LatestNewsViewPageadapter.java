@@ -75,7 +75,7 @@ public class LatestNewsViewPageadapter extends PagerAdapter {
         imageView.setDefaultImageResId(R.drawable.ic_launcher);
         imageView.setErrorImageResId(R.drawable.ic_launcher);
         String imgUrl = result_latestRecomms.get(position).getBan_img();
-//        String title =result_latestRecomms.get(position).getName();
+ //       String title =result_latestRecomms.get(position).getName();
         imgUrl = imgUrl.replace("%3A",":");
         imgUrl = imgUrl.replace("%2F","/");
         imageView.setImageUrl(imgUrl, imageLoader);

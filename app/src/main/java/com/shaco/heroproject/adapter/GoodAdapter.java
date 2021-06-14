@@ -18,6 +18,7 @@ import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.Adapter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,6 +66,7 @@ public class GoodAdapter extends Adapter<GoodAdapter.GoodHolder> {
 			holder.good_itemTv.setText(results.getName());
 			if (results.getIcon() != null && results.getIcon().length() > 0) {
 				String imgUrl = results.getIcon();
+				Log.i("shaco","图片的url是"+imgUrl);
 				getBitmap(imgUrl, holder.good_itemIv);
 			}
 

@@ -29,6 +29,8 @@
         <activity android:name="com.shaco.heroproject.activity.HeroInforActivity" />
         <activity android:name="com.shaco.heroproject.activity.HeroInforSkillActivity" />
         <activity android:name="com.shaco.heroproject.activity.HeroInforMessageActivity" />
+        <activity android:name="com.shaco.heroproject.activity.HeroInforEquipmentActivity" />
+        <activity android:name="com.shaco.heroproject.activity.EquipmentListActivity" />
     </application>
 
 </manifest>

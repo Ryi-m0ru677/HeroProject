@@ -28,6 +28,8 @@
         <activity android:name=".activity.HeroInforActivity"></activity>
         <activity android:name=".activity.HeroInforSkillActivity"></activity>
         <activity android:name=".activity.HeroInforMessageActivity"></activity>
+        <activity android:name=".activity.HeroInforEquipmentActivity"></activity>
+        <activity android:name=".activity.EquipmentListActivity"></activity>
     </application>
 
 </manifest>
